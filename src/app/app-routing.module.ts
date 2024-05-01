@@ -14,8 +14,8 @@ export const routes: Routes = [
   },
   {
     path: 'product',
-    loadComponent: () => import('./product/product.component')
-        .then(m => m.ProductComponent)
+    loadChildren: () => import('./product/product.module')
+        .then(m => m.ProductModule)
   },
 ];
 
