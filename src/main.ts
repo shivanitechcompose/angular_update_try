@@ -8,6 +8,7 @@ import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 import { AppComponent } from './app/app.component';
 import { RouterModule } from '@angular/router';
+import { appConfig } from './app/app.config';
 
 if (environment.production) {
   enableProdMode();
@@ -23,7 +24,12 @@ if (environment.production) {
 //   .catch(err => console.error(err));
 
 //--app.routing file through
-bootstrapApplication(AppComponent,{
-  providers: [
-    importProvidersFrom(RouterModule.forRoot(routes))]
-});
+// bootstrapApplication(AppComponent,{
+//   providers: [
+//     importProvidersFrom(RouterModule.forRoot(routes))]
+// });
+
+
+//universal app
+bootstrapApplication(AppComponent, appConfig)
+    .catch(err => console.error(err));
